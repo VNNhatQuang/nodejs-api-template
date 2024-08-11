@@ -1,11 +1,13 @@
 {
-    "name": "a",
+    "name": "name_of_project",
     "version": "1.0.0",
-    "description": "",
+    "description": "description_of_project",
     "main": "index.js",
     "scripts": {
         "dev": "nodemon ./src/index.js",
-        "start": "node ./src/index.js"
+        "start": "node ./src/index.js",
+        "migrate": "npx sequelize-cli db:migrate",
+        "seeder": "npx sequelize-cli db:seed:all"
     },
     "dependencies": {
         "cors": "^2.8.5",
@@ -19,6 +21,7 @@
         "swagger-ui-express": "^5.0.1"
     },
     "devDependencies": {
+        "@faker-js/faker": "^8.4.1",
         "nodemon": "^3.1.4",
         "sequelize-cli": "^6.6.2"
     }
