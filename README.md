@@ -1,5 +1,5 @@
 # Node.js API Template
-This is a starter template for building APIs using Node.js and Node.js. It includes Express for the web server, Sequelize for the database ORM, and various other useful libraries for API development.
+This is a starter template for building APIs using Node.js. It includes Express for the web server, Sequelize for the database ORM, and various other useful libraries for API development.
 
 
 ## Project Overview
@@ -49,7 +49,7 @@ The project follows this structure:
     │   ├── app.ts                  
     │   └── index.ts                        
     ├── .env.example                
-    ├── .sequelizerc                
+    ├── .sequelizerc                # Sequelize configuration
     ├── package-lock.json           
     ├── package.json                
     └── README.md               
