@@ -12,16 +12,5 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
 );
 
 
-// Test connection to DB
-(async () => {
-    try {
-        await sequelize.authenticate();
-        console.log("Connection to Database successfully.");
-    } catch (error) {
-        console.error("Unable to connect to the database:", error);
-    }
-})()
-
-
 
 module.exports = sequelize;

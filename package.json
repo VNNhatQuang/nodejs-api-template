@@ -9,10 +9,13 @@
         "migrate": "npx sequelize-cli db:migrate",
         "seeder": "npx sequelize-cli db:seed:all"
     },
+    "author": "QuangVNN",
+    "license": "ISC",
     "dependencies": {
         "cors": "^2.8.5",
         "dotenv": "^16.4.5",
         "express": "^4.19.2",
+        "helmet": "^7.1.0",
         "joi": "^17.13.3",
         "jsonwebtoken": "^9.0.2",
         "mysql2": "^3.11.0",
@@ -22,6 +25,7 @@
     },
     "devDependencies": {
         "@faker-js/faker": "^8.4.1",
+        "morgan": "^1.10.0",
         "nodemon": "^3.1.4",
         "sequelize-cli": "^6.6.2"
     }

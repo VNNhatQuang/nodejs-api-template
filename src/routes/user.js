@@ -1,7 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const UserController = require("../app/controllers/UserController");
-const verifyToken = require("../app/middleware/verifyToken");
+const UserController = require("../controllers/UserController");
+const verifyToken = require("../middleware/VerifyToken");
+const Validate = require("../middleware/Validate");
+const LoginValidator = require("../validators/LoginValidator");
 
 
 /**
@@ -48,7 +50,7 @@ const verifyToken = require("../app/middleware/verifyToken");
  *               items:
  *                 type: string
  */
-router.post('/login', UserController.login);
+router.post('/login', Validate(LoginValidator), UserController.login);
 
 /** Lấy ra danh sách toàn bộ user
  * @swagger

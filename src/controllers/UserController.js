@@ -1,4 +1,4 @@
-const LoginRequest = require("../requests/LoginRequest");
+const LoginRequest = require("../validators/LoginValidator");
 const User = require("../models/User");
 const UserService = require("../services/UserService");
 
@@ -14,16 +14,6 @@ const UserController = {
     login: async (req, res) => {
         try {
             const { userName, password } = req.body;
-
-            const validate = LoginRequest(req.body);
-
-            if (!validate.pass) {
-                return res.status(200).json({
-                    success: false,
-                    message: "Login user",
-                    data: validate.data
-                });
-            }
 
             const user = await UserService.login(userName, password);
 

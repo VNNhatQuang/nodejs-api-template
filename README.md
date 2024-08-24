@@ -1,81 +1,108 @@
-# Node.js API Application Template
-A quick setup template for building Node.js API applications.
+# Node.js API Template
+This is a starter template for building APIs using Node.js and Node.js. It includes Express for the web server, Sequelize for the database ORM, and various other useful libraries for API development.
 
 
-
-# Packages
-This template uses several key packages in the Node.js ecosystem:
-- [express]: Handles HTTP protocol, routing, and middleware.
-- [jwt]: Manages authentication using JSON Web Tokens.
-- [mysql2]: Provides MySQL database connectivity.
-- [sequelize]: Implements Object-Relational Mapping (ORM) for MySQL.
-- [swagger]: Generates API documentation.
+## Project Overview
+- **Name**: nodejs_api
+- **Version**: 1.0.0
+- **Description**: A template for building APIs using Node.js.
+- **Author**: [Vo Ngoc Nhat Quang](https://github.com/VNNhatQuang)
 
 
+## Table of Contents
+- Installation
+- Project Structure
+- Scripts
+- Environment Variables
+- Database Setup
+- API Documentation
 
-## 1. Installation
 
-### Prerequisites
-- **Node.js version**: >= 20
-
-### Setup Steps
-
-1. Create file ".env"
-    ```sh
-    cp .env.example .env
-    ```
-
-2. Install packages
-    ```sh
-    npm i
-    ```
-
-3. Run app
-    ```sh
-    npm start       # For production
-    npm run dev     # For development
-    ```
-
-## 2. Sequelize most used command
-### Migrations
-1. Create migration:
-    ```sh
-    npx sequelize-cli migration:generate --name <migration_name>
-    ```
-2. Run all migration:
-    ```sh
-    npx sequelize-cli db:migrate
-    ```
-
-### Seeders
-1. Create seeder:
-    ```sh
-    npx sequelize-cli seeder:generate --name <seeder_name>
-    ```
-2. Run all seeder:
-    ```sh
-    npx sequelize-cli db:seed:all
-    ```
-
-### Others:
+## Installation
+To get started, clone this repository and install the dependencies:
 ```sh
-npx sequelize-cli
+git clone https://github.com/VNNhatQuang/nodejs-api-template.git        # Clone repository
+cd nodejs_api_template                                                  # Into project folder
+npm install                                                             # Install dependencies
 ```
 
 
+## Project Structure
+The project follows this structure:
+
+    .
+    ├── src
+    │   ├── config
+    │   │    ├── database.ts        # Database config
+    │   │    ├── sequelize.js       # Sequelize config
+    │   │    └── swagger.ts         # Swagger config
+    │   ├── controllers             # Controllers for handling requests
+    │   ├── database                
+    │   │    ├── migrations         # Sequelize migrations
+    │   │    └── seeders            # Sequelize seeders
+    │   ├── helpers                 # Utility functions used across the application
+    │   ├── middleware              # Custom middleware functions
+    │   ├── models                  # Sequelize models
+    │   ├── routes                  # Route definitions
+    │   ├── services                # Business logic
+    │   ├── validators              # Schema Joi to validate request
+    │   ├── app.ts                  
+    │   └── index.ts                        
+    ├── .env.example                
+    ├── .sequelizerc                
+    ├── package-lock.json           
+    ├── package.json                
+    └── README.md               
 
 
+## Scripts
+In the `package.json`, you can find various useful scripts:
+- **Start the development server**:
+    ```sh
+    npm run dev
+    ```
+- **Start the production server**:  
+    ```sh
+    npm start
+    ```
+- **Run database migrations**:  
+    ```sh
+    npm run migrate
+    ```
+- **Run database seeders**:  
+    ```sh
+    npm run seeder
+    ```
 
 
+## Environment Variables
+To configure the environment variables, create a `.env` file in the root directory. Example:
+```sh
+DB_HOST = localhost
+DB_USER = root
+DB_PASSWORD = password
+DB_NAME = your_database_name
+SECRET_KEY = your_secret_key
+```
+Make sure to replace these values with your actual settings.
 
 
+## Database Setup
+This template uses **Sequelize** with **MySQL** as the database. You can run migrations and seeders to set up the database schema and initial data:
+- **Run migrations**:  
+    ```sh
+    npm run migrate
+    ```
+- **Run seeders**:  
+    ```sh
+    npm run seeder
+    ```
+Ensure you have set up your `.env` file correctly with your database credentials.
 
 
-
-
-   [express]: <https://www.npmjs.com/package/express>
-   [jwt]: <https://www.npmjs.com/package/jsonwebtoken>
-   [mysql2]: <https://www.npmjs.com/package/mysql2>
-   [sequelize]: <https://www.npmjs.com/package/sequelize>
-   [swagger]: <https://swagger.io/>
-   
+## API Documentation
+This template includes **Swagger** for API documentation. To access the documentation, start the server and navigate to:
+```sh
+http://localhost:3000/api-docs
+```
+Ensure you have set up your `.env` file correctly with your database credentials.
