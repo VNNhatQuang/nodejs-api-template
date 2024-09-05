@@ -1,4 +1,3 @@
-const LoginRequest = require("../validators/LoginValidator");
 const User = require("../models/User");
 const UserService = require("../services/UserService");
 
