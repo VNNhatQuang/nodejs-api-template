@@ -2,11 +2,11 @@ version: '3.8'
 
 services:
   api:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: .
     container_name: nodejs_api
     env_file: .env
+    environment:
+      - DB_HOST=mysql_db
     ports:
       - "${PORT}:${PORT}"
     depends_on:
@@ -21,8 +21,8 @@ services:
     container_name: mysql_db
     env_file: .env
     environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
-      MYSQL_DATABASE: ${DB_NAME}
+      - MYSQL_ALLOW_EMPTY_PASSWORD="yes"
+      - MYSQL_DATABASE=${DB_NAME}
     ports:
       - "${DB_PORT}:3306"
     volumes:
