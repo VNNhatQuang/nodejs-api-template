@@ -11,7 +11,6 @@ class UserController {
      */
     async showAll(req, res) {
         try {
-
             const data = await UserService.getAll();
 
             return res.status(200).json({
