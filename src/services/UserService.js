@@ -12,6 +12,7 @@ class UserService {
             const users = await User.findAll();
             return users;
         } catch (error) {
+            console.log(error);
             return [];
         }
     }
