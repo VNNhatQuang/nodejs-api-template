@@ -1,6 +1,6 @@
 const { DataTypes } = require("sequelize");
-const database = require("../config/database");
-const connection = database.getConnection();
+const Database = require("../config/database");
+const connection = Database.getConnection();
 
 
 const User = connection.define("User",

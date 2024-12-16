@@ -1,7 +1,7 @@
 const express = require("express");
 const Routes = require("./routes");
 const { swaggerUi, specs } = require("./config/swagger");
-const database = require("./config/database");
+const Database = require("./config/database");
 const InitMiddleware = require("./middleware");
 const NotFoundHandle = require("./middleware/NotFoundHandler");
 
@@ -18,7 +18,7 @@ Routes(app);
 app.use(NotFoundHandle);   // Middleware handle resources not found
 
 // Test connection to DB
-database.testConnection();
+Database.testConnection();
 
 
 
