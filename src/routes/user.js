@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const UserController = require("../controllers/UserController");
-const verifyToken = require("../middleware/VerifyToken");
+const Authenticate = require("../middleware/Authenticate");
 const Validate = require("../middleware/Validate");
 
 
@@ -48,7 +48,7 @@ const Validate = require("../middleware/Validate");
  *                     format: date-time
  *                     description: When the user was last updated
  */
-router.get('/', verifyToken, UserController.showAll);
+router.get('/', Authenticate, UserController.showAll);
 
 
 

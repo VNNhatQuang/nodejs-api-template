@@ -8,7 +8,7 @@ const jwt = require("jsonwebtoken");
  * @param {*} next 
  * @returns 
  */
-const verifyToken = (req, res, next) => {
+const Authenticate = (req, res, next) => {
     // Lấy token từ header của client
     const token = req.headers["authorization"]?.split(" ")[1];
 
@@ -38,4 +38,4 @@ const verifyToken = (req, res, next) => {
 
 
 
-module.exports = verifyToken;
+module.exports = Authenticate;
